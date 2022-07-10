@@ -2,7 +2,17 @@
 // TODO(user): Add simple overview of use/purpose
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+Proof of Concept: Kubernetes Operator interaction with external APIs.
+
+## Installation
+
+```shell
+operator-sdk init --domain thetacloud.com --repo github.com/oleggorj/tfe-operator
+
+operator-sdk create api --group cache --version v1alpha1 --kind Tfe --resource --controller
+
+
+```
 
 ## Getting Started
 You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.

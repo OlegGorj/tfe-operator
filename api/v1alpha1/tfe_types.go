@@ -28,14 +28,14 @@ type TfeSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Tfe. Edit tfe_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 // TfeStatus defines the observed state of Tfe
 type TfeStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
 }
 
 //+kubebuilder:object:root=true
