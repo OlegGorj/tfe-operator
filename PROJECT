@@ -1,4 +1,4 @@
-domain: thetacloud.com
+domain: my.domain
 layout:
 - go.kubebuilder.io/v3
 plugins:
@@ -11,9 +11,18 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: thetacloud.com
-  group: cache
-  kind: Tfe
+  domain: my.domain
+  group: tfe
+  kind: Workspace
+  path: github.com/oleggorj/tfe-operator/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: my.domain
+  group: tfe
+  kind: Run
   path: github.com/oleggorj/tfe-operator/api/v1alpha1
   version: v1alpha1
 version: "3"

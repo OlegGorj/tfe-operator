@@ -1,22 +1,17 @@
 # tfe-operator
-// TODO(user): Add simple overview of use/purpose
+
+Kubernetes Operator designed to perform various functions with TFE entities.
 
 ## Description
-Proof of Concept: Kubernetes Operator interaction with external APIs.
 
-## Installation
+This repo is not a complete product, its rather attempt to explore what is possible.
 
-```shell
-operator-sdk init --domain thetacloud.com --repo github.com/oleggorj/tfe-operator
-
-operator-sdk create api --group cache --version v1alpha1 --kind Tfe --resource --controller
-
-
-```
 
 ## Getting Started
+
 You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
 **Note:** Your controller will automatically use the current context in your kubeconfig file (i.e. whatever cluster `kubectl cluster-info` shows).
+
 
 ### Running on the cluster
 1. Install Instances of Custom Resources:

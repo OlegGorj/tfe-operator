@@ -1,0 +1,6 @@
+apiVersion: tfe.my.domain/v1alpha1
+kind: Workspace
+metadata:
+  name: workspace-sample
+spec:
+  # TODO(user): Add fields here

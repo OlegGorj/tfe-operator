@@ -1,6 +1,0 @@
-apiVersion: cache.thetacloud.com/v1alpha1
-kind: Tfe
-metadata:
-  name: tfe-sample
-spec:
-  # TODO(user): Add fields here
