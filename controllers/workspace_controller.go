@@ -18,6 +18,7 @@ package controllers
 
 import (
 	"context"
+	"k8s.io/apimachinery/pkg/api/errors"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -36,6 +37,7 @@ type WorkspaceReconciler struct {
 //+kubebuilder:rbac:groups=tfe.my.domain,resources=workspaces,verbs=get;list;watch;create;update;patch;delete
 //+kubebuilder:rbac:groups=tfe.my.domain,resources=workspaces/status,verbs=get;update;patch
 //+kubebuilder:rbac:groups=tfe.my.domain,resources=workspaces/finalizers,verbs=update
+//+kubebuilder:rbac:groups=core,resources=pods,verbs=get;list;
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
@@ -48,8 +50,23 @@ type WorkspaceReconciler struct {
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.12.1/pkg/reconcile
 func (r *WorkspaceReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
+	log := ctrl.Log.WithValues("WorkspaceReconciler", req.NamespacedName)
 
-	// TODO(user): your logic here
+	log.Info("Start Reconcile", "name", req.NamespacedName)
+	defer log.Info("Completed Reconcile", "name", req.NamespacedName)
+
+	log.Info("WorkspaceReconciler start: resource has changed")
+
+	latest := &tfev1alpha1.Workspace{}
+	err := r.Get(ctx, req.NamespacedName, latest)
+	if err != nil {
+		if errors.IsNotFound(err) {
+			log.Info("Workspace resource not found. Ignoring since object must be deleted")
+			return ctrl.Result{}, nil
+		}
+		log.Error(err, "Failed to get Workspace")
+		return ctrl.Result{}, err
+	}
 
 	return ctrl.Result{}, nil
 }

@@ -1,0 +1,66 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - tfe.my.domain
+  resources:
+  - runs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - tfe.my.domain
+  resources:
+  - runs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - tfe.my.domain
+  resources:
+  - runs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - tfe.my.domain
+  resources:
+  - workspaces
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - tfe.my.domain
+  resources:
+  - workspaces/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - tfe.my.domain
+  resources:
+  - workspaces/status
+  verbs:
+  - get
+  - patch
+  - update

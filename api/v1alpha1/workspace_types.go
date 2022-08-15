@@ -123,40 +123,40 @@ type WorkspaceSpec struct {
 	// Module source and version to use
 	// +optional
 	// +nullable
-	Module *Module `json:"module"`
-	// Details of the VCS repository we want to connect to the workspace
-	// +optional
-	// +nullable
-	VCS *VCS `json:"vcs"`
-	// Variables as inputs to module
-	// +optional
-	Variables []*Variable `json:"variables,omitempty"`
-	// Run Triggers from source workspaces to trigger this workspace
-	// +optional
-	RunTriggers []*RunTrigger `json:"runTriggers,omitempty"`
-	// File path within operator pod to load workspace secrets
-	SecretsMountPath string `json:"secretsMountPath"`
-	// SSH Key ID. This key must already exist in the TF Cloud organization.  This can either be the user assigned name of the SSH Key, or the system assigned ID.
-	// +optional
-	SSHKeyID string `json:"sshKeyID,omitempty"`
-	// Outputs denote outputs wanted
-	// +optional
-	Outputs []*OutputSpec `json:"outputs,omitempty"`
-	// Terraform version used for this workspace. The default is `latest`.
-	// +optional
-	TerraformVersion string `json:"terraformVersion"`
-	// Specifies the agent pool ID we wish to use.
-	// +optional
-	AgentPoolID string `json:"agentPoolID,omitempty"`
-	// Notification configuration
-	// +optional
-	Notifications []*Notification `json:"notifications,omitempty"`
-	// Omit namespace prefix in workspace name
-	// +optional
-	OmitNamespacePrefix bool `json:"omitNamespacePrefix,omitempty"`
-	// Specifies the agent pool name we wish to use.
-	// +optional
-	AgentPoolName string `json:"agentPoolName,omitempty"`
+	//Module *Module `json:"module"`
+	//// Details of the VCS repository we want to connect to the workspace
+	//// +optional
+	//// +nullable
+	//VCS *VCS `json:"vcs"`
+	//// Variables as inputs to module
+	//// +optional
+	//Variables []*Variable `json:"variables,omitempty"`
+	//// Run Triggers from source workspaces to trigger this workspace
+	//// +optional
+	//RunTriggers []*RunTrigger `json:"runTriggers,omitempty"`
+	//// File path within operator pod to load workspace secrets
+	//SecretsMountPath string `json:"secretsMountPath"`
+	//// SSH Key ID. This key must already exist in the TF Cloud organization.  This can either be the user assigned name of the SSH Key, or the system assigned ID.
+	//// +optional
+	//SSHKeyID string `json:"sshKeyID,omitempty"`
+	//// Outputs denote outputs wanted
+	//// +optional
+	//Outputs []*OutputSpec `json:"outputs,omitempty"`
+	//// Terraform version used for this workspace. The default is `latest`.
+	//// +optional
+	//TerraformVersion string `json:"terraformVersion"`
+	//// Specifies the agent pool ID we wish to use.
+	//// +optional
+	//AgentPoolID string `json:"agentPoolID,omitempty"`
+	//// Notification configuration
+	//// +optional
+	//Notifications []*Notification `json:"notifications,omitempty"`
+	//// Omit namespace prefix in workspace name
+	//// +optional
+	//OmitNamespacePrefix bool `json:"omitNamespacePrefix,omitempty"`
+	//// Specifies the agent pool name we wish to use.
+	//// +optional
+	//AgentPoolName string `json:"agentPoolName,omitempty"`
 }
 
 // WorkspaceStatus defines the observed state of Workspace

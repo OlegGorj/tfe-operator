@@ -1,0 +1,9 @@
+mode: set
+github.com/oleggorj/tfe-operator/controllers/run_controller.go:49.95,55.2 2 0
+github.com/oleggorj/tfe-operator/controllers/run_controller.go:58.66,62.2 1 0
+github.com/oleggorj/tfe-operator/controllers/workspace_controller.go:51.101,62.16 8 0
+github.com/oleggorj/tfe-operator/controllers/workspace_controller.go:71.2,71.27 1 0
+github.com/oleggorj/tfe-operator/controllers/workspace_controller.go:62.16,63.29 1 0
+github.com/oleggorj/tfe-operator/controllers/workspace_controller.go:67.3,68.28 2 0
+github.com/oleggorj/tfe-operator/controllers/workspace_controller.go:63.29,66.4 2 0
+github.com/oleggorj/tfe-operator/controllers/workspace_controller.go:75.72,79.2 1 0
